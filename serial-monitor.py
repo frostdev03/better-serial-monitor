@@ -4,11 +4,25 @@ import serial
 import serial.tools.list_ports
 import threading
 from datetime import datetime
+import os
+import sys
+
+def resource_path(relative_path):
+    """ Mengambil path absolut ke resource, berfungsi untuk dev dan PyInstaller """
+    try:
+        # PyInstaller membuat folder sementara dan menyimpan path-nya di _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 class SerialMonitorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Simple Serial Monitor v2")
+        # self.root.wm_iconbitmap("app_icon.ico")
+        self.root.wm_iconbitmap(resource_path("app_icon.ico"))
+        self.root.title("Simple Serial Monitor v1.0")
         self.root.geometry("800x500") # Sedikit lebih tinggi untuk menampung tombol baru
         
         self.serial_conn = None
