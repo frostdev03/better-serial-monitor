@@ -58,7 +58,7 @@ python -m PyInstaller --noconsole --onefile --icon=app_icon.ico --add-data "app_
 ## 👨‍💻 Author
 
 **Fahril Tanzil**
-- GitHub: [@yourusername](https://github.com/frostdev03)
+- GitHub: [@frostdev03](https://github.com/frostdev03)
 
 ## 📄 License
 
